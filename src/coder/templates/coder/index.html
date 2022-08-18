@@ -1,0 +1,15 @@
+
+{% extends 'coder/base.html' %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block contenido %}
+
+
+<h1>Bienvenido {{ request.user.username }}</h1>
+<p>Ultimo inicio de sesion: {{request.user.last_login}}</p>
+<br>
+<p>Pagina de Inicio</p>
+
+{% endblock %}
+

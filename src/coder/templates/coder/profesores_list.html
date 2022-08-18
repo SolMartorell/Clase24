@@ -1,0 +1,12 @@
+{% extends 'coder/base.html' %}
+
+
+
+
+{% block contenido %}
+    
+    {% for profesor in object_list %}
+        <p>{{profesor}}  <a href="{% url 'profesor_detail' profesor.id %}"> Ver mas</a> </p>   
+    {% endfor %}
+
+{% endblock contenido %}

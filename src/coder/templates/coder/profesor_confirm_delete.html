@@ -1,0 +1,15 @@
+{% extends 'coder/base.html' %}
+
+
+
+{% block contenido %}
+    
+    <form method="post">{% csrf_token %}
+
+        <p>Desea borrar efectivamente al/la profesor/a {{object}}</p>
+        <input type="submit" value="Confirmar">
+        <a href="{% url 'profesores' %}">Volver</a>
+
+    </form>
+
+{% endblock contenido %}

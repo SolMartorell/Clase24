@@ -1,0 +1,27 @@
+{% extends 'coder/base.html' %}
+
+{% block titulo %}  Cursos {% endblock titulo %}
+
+
+{% block contenido %}
+
+<h1> Pagina de cursos </h1>
+<p> De momento estamos sin cupos disponibles </p>
+
+    <form method="post">{% csrf_token %}
+
+        {{ formulario.as_p }}
+
+        <input type="submit" value="Crear">
+    </form>
+
+    {% for curso in cursos %}
+        <p style="color: red">{{curso.nombre}}  
+            <a href="{%url 'borrar_curso' curso.id %}">Borrar</a> 
+            <a href="{%url 'editar_curso' curso.id %}">Editar</a> 
+            
+        </p>
+    {% endfor %}
+
+
+{% endblock contenido %}
